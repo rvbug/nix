@@ -1,0 +1,2 @@
+# nix
+Configuration through Nix
