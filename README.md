@@ -19,6 +19,16 @@ Most mordern programming languages usesd both . Example python has `map`, `filte
 Nix uses delclartive approach to define system state. This helps to reproduce the exact state at any given point.
 Isolation is achieved by creating env for each package. Caching helps to store package builds helps speed up package installation and updates.
 
+# Components
+- NixOS - A Linux distribution which used Nix as it's package manager  
+- Nix - Package Manager  
+- Nix Shell - Command line tool to create isolated enviornment without installing the OS   
+- Flakes - Helps define entire system configuration in a single file   
+- Home Manager - Helps manage your home directory , dotfiles and configure your shell   
+
+# Syntax
+- Expressions - 
+
 
 
 
