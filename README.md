@@ -26,9 +26,14 @@ Isolation is achieved by creating env for each package. Caching helps to store p
 - Flakes - Helps define entire system configuration in a single file   
 - Home Manager - Helps manage your home directory , dotfiles and configure your shell   
 
-# Syntax
-- Expressions - 
+# Nix Syntax
+- Expressions : Everything is an expression including assignments and function definitions
+- Data types  : Attributes are key-value pair, List are stored in `[ ]` and sets in `{ }`, Strings in either `"` or `'`
+- Functions   : declare using `name = expr` and calling by `name args` 
+```nix
+  
 
+```
 
 
 
