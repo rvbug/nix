@@ -96,3 +96,5 @@ Supports following OS
 
 # References
 https://mynixos.com/
+https://github.com/nix-community/awesome-nix?tab=readme-ov-file#rust
+
