@@ -30,9 +30,12 @@ Isolation is achieved by creating env for each package. Caching helps to store p
 - Expressions : Everything is an expression including assignments and function definitions
 - Data types  : Attributes are key-value pair, List are stored in `[ ]` and sets in `{ }`, Strings in either `"` or `'`
 - Functions   : declare using `name = expr` and calling by `name args` 
-```nix
-  
 
+```nix
+  myAttributes = {
+    name: "jd"
+    city: "ny"
+  }
 ```
 
 
