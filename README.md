@@ -28,9 +28,11 @@ Isolation is achieved by creating env for each package. Caching helps to store p
 
 # Nix Syntax
 - Expressions : Everything is an expression including assignments and function definitions
+```nix
+  {pkgs}: pkgs.htop
+ 
+```
 - Data types  : Attributes are key-value pair, List are stored in `[ ]` and sets in `{ }`, Strings in either `"` or `'`
-- Functions   : declare using `name = expr` and calling by `name args` 
-
 ```nix
   myAttributes = {
     name: "jd"
@@ -38,10 +40,47 @@ Isolation is achieved by creating env for each package. Caching helps to store p
   }
 ```
 
+- Functions   : declare using `name = expr` and calling by `name args` 
 
 
 
+# Tutorials
 
+- Under `/etc/nixos` there is a fil called configuration.nix. Add user level and system level software to be installed and then run the following command
+`sudo nixos-rebuild switch`
+
+- `/nix/store` contains the packages with hash
+
+- Channels - Default way of managing packages on your system. Exact version stored outside of the config files
+
+## Flakes 
+Similar to channels but stores the config files inside the config files. Uses flakes.log like a time machine.    
+To setup permanently : `configuration.nix` add ` nix.settings.experimental-features = [ "nix-command" "flakes" ];`  
+
+Download `dotfiles` repo. Create a folder inside this `nix`. Create a file called `flakes.nix`
+
+
+```nix
+description : "";
+
+# mention the git repo
+input : {};
+
+# tells what to do with these inputs
+output : {};
+
+```
+
+
+
+# Templates
+
+- Terminal colors
+- Background color for terminal
+- Terminal font
+- List of softwares to be installed based on the OS
+- List of programming languages
+- List of tools - fd, ripgrep, tree-sitter etc
 
 
 
@@ -51,3 +90,9 @@ Supports following OS
 - Fedora
 - Arch
 - Nix
+
+
+
+
+# References
+https://mynixos.com/
