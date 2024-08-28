@@ -46,10 +46,28 @@ Isolation is achieved by creating env for each package. Caching helps to store p
 
 # Tutorials
 
-- Under `/etc/nixos` there is a fil called configuration.nix. Add user level and system level software to be installed and then run the following command
-`sudo nixos-rebuild switch`
+- /nix/store/ - contains all softwares. Hash-filename.drv
+- /etc/nixos - Contains 2 config files config.nix and hardware-config.nix
+- `sudo nixos-rebuild switch` - For rebuilding after changing the config files 
+- `nix-shell -p git neovim lolcat` - p is package. Stored in /nix/store as .drv file
+- `nix-shell -p cowsay --run cowsay nix` - runing directly. Run will drop you to the shell commands
 
-- `/nix/store` contains the packages with hash
+- The above may give new version in every machine so to reproduce the exact version - check the command below  
+  `nix-shell -p git --run "git --version --pure -I nixpkgs=https://github.com/NixOS/nixpkgs/archive/hash.tar.gz`  
+  pure - discards most of the env variables set in your system. So the git provided by nix will be installed.
+  I - To determine the source of of package
+
+- Freeing up space by using `nix-collect-garbage`
+   
+- Dependencies - if you want to a package which has dependencies then one such example of using bash script
+```bash
+#!/usr/bin/env nix-shell
+#! nix-shell -i bash --pure
+#! nix-shell -p bash curl jq
+#! nix-shell -I nixpkgs=https://github.com/NixOS/nixpkgs/archive/hash.tar.gz
+curl https://github.com/NixOS/nixpkgs/xyxpackage | xml2json | jq
+
+```
 
 - Channels - Default way of managing packages on your system. Exact version stored outside of the config files
 
