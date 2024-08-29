@@ -28,6 +28,7 @@ Supports following OS
 
 
 # References
-https://mynixos.com/
-https://github.com/nix-community/awesome-nix?tab=readme-ov-file#rust
+https://mynixos.com/  
+https://github.com/nix-community/awesome-nix?tab=readme-ov-file#rust    
+https://ianthehenry.com/posts/how-to-learn-nix/prior-knowledge/  
 
