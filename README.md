@@ -24,7 +24,41 @@ Supports following OS
 - Arch
 - Nix
 
+Folder Structure
 
+```markdown
+nix-config/
+│
+├── flake.nix           # Main Nix flake configuration
+├── flake.lock          # Locked dependencies
+│
+├── home.nix            # Home Manager configuration
+│
+├── hosts/              # Machine-specific configurations
+│   ├── macbook/
+│   │   └── default.nix
+│   └── workstation/
+│       └── default.nix
+│
+├── modules/            # Reusable configuration modules
+│   ├── neovim/
+│   │   ├── default.nix
+│   │   └── plugins.nix
+│   ├── starship.nix
+│   ├── wezterm.nix
+│   └── git.nix
+│
+├── dotfiles/           # Actual dotfile configurations
+│   ├── nvim/
+│   │   ├── init.lua
+│   │   └── lua/
+│   ├── starship.toml
+│   └── wezterm.lua
+│
+└── scripts/            # Utility scripts
+    ├── setup.sh
+    └── update.sh
+```
 
 
 # References
