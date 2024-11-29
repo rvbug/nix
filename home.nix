@@ -13,10 +13,11 @@
       wezterm
       starship
       curl
-      
-
       tmux
-      
+      rofi
+      dunst
+      feh
+
       # Language-specific tools
       python3
       rustup
@@ -82,4 +83,24 @@
         source-file ${../dotfiles/tmux/tmux.conf}
       '';
     };
+
+  # i3 configuration
+  xsession.windowManager.i3 = {
+      enable = true;
+      config = {
+        modifier = "Mod4";  # Windows key
+        bars = [{
+          position = "top";
+          statusCommand = "${pkgs.i3status}/bin/i3status";
+        }];
+        keybindings = {
+          "Mod4+Return" = "exec ${pkgs.wezterm}/bin/wezterm";
+          "Mod4+Shift+q" = "kill";
+          # Add more keybindings
+        };
+      };
+      extraConfig = builtins.readFile ../dotfiles/i3/config;
+    };
+
+
 }
