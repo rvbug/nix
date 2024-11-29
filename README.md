@@ -47,6 +47,9 @@ nix-config/
 │   ├── starship.nix
 │   ├── wezterm.nix
 │   └── git.nix
+│   ├── tmux/
+│   │   ├── default.nix
+│   │   └── tmp.nix
 │
 ├── dotfiles/           # Actual dotfile configurations
 │   ├── nvim/
@@ -54,10 +57,16 @@ nix-config/
 │   │   └── lua/
 │   ├── starship.toml
 │   └── wezterm.lua
+│   ├── tmux/
+│   │   ├── tmux.conf   # Main tmux configuration
+│   │   └── plugins/   
+│   │       ├── tpm/    # Tmux Plugin Manager (TPM) plugins
+│   │       └── other-plugins/
 │
 └── scripts/            # Utility scripts
     ├── setup.sh
     └── update.sh
+    └── tmux-setup.sh  # Optional setup script for tmux
 ```
 
 
