@@ -50,7 +50,10 @@ nix-config/
 │   ├── tmux/
 │   │   ├── default.nix
 │   │   └── tmp.nix
-│
+│   ├── i3/
+│   │   └── default.nix
+│   
+│   
 ├── dotfiles/           # Actual dotfile configurations
 │   ├── nvim/
 │   │   ├── init.lua
@@ -62,7 +65,9 @@ nix-config/
 │   │   └── plugins/   
 │   │       ├── tpm/    # Tmux Plugin Manager (TPM) plugins
 │   │       └── other-plugins/
-│
+│   ├── i3/
+│   │   ├── config
+│   
 └── scripts/            # Utility scripts
     ├── setup.sh
     └── update.sh
