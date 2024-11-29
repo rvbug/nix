@@ -67,4 +67,19 @@
       }
     '';
   };
+
+ # Tmux configuration
+  programs.tmux = {
+      enable = true;
+      shell = "${pkgs.zsh}/bin/zsh";
+      terminal = "screen-256color";
+      plugins = with pkgs.tmuxPlugins; [
+        resurrect
+        continuum
+        # Add your preferred tmux plugins
+      ];
+      extraConfig = ''
+        source-file ${../dotfiles/tmux/tmux.conf}
+      '';
+    };
 }
